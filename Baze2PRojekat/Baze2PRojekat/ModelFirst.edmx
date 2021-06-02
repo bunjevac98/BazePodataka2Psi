@@ -1,0 +1,1183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ModelFirst.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ModelFirstStoreContainer">
+    <EntitySet Name="Bends" EntityType="ModelFirst.Store.Bends" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Festivals" EntityType="ModelFirst.Store.Festivals" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Ucestvujes" EntityType="ModelFirst.Store.Ucestvujes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Zanrs" EntityType="ModelFirst.Store.Zanrs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Muzicars" EntityType="ModelFirst.Store.Muzicars" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Albums" EntityType="ModelFirst.Store.Albums" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MuzickaIzdavackaKucas" EntityType="ModelFirst.Store.MuzickaIzdavackaKucas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Koncerts" EntityType="ModelFirst.Store.Koncerts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Menadzers" EntityType="ModelFirst.Store.Menadzers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Nagradas" EntityType="ModelFirst.Store.Nagradas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Dajes" EntityType="ModelFirst.Store.Dajes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Osvajas" EntityType="ModelFirst.Store.Osvajas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Pripadas" EntityType="ModelFirst.Store.Pripadas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sviras" EntityType="ModelFirst.Store.Sviras" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Snimas" EntityType="ModelFirst.Store.Snimas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Izdajes" EntityType="ModelFirst.Store.Izdajes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Odrzis" EntityType="ModelFirst.Store.Odrzis" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Muzicars_Gitarista" EntityType="ModelFirst.Store.Muzicars_Gitarista" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Muzicars_Bubnjar" EntityType="ModelFirst.Store.Muzicars_Bubnjar" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Muzicars_Klavijaturista" EntityType="ModelFirst.Store.Muzicars_Klavijaturista" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="BendUcestvuje" Association="ModelFirst.Store.BendUcestvuje">
+      <End Role="Bend" EntitySet="Bends" />
+      <End Role="Ucestvuje" EntitySet="Ucestvujes" />
+    </AssociationSet>
+    <AssociationSet Name="UcestvujeFestival" Association="ModelFirst.Store.UcestvujeFestival">
+      <End Role="Ucestvuje" EntitySet="Ucestvujes" />
+      <End Role="Festival" EntitySet="Festivals" />
+    </AssociationSet>
+    <AssociationSet Name="BendMenadzer" Association="ModelFirst.Store.BendMenadzer">
+      <End Role="Bend" EntitySet="Bends" />
+      <End Role="Menadzer" EntitySet="Menadzers" />
+    </AssociationSet>
+    <AssociationSet Name="FestivalDaje" Association="ModelFirst.Store.FestivalDaje">
+      <End Role="Festival" EntitySet="Festivals" />
+      <End Role="Daje" EntitySet="Dajes" />
+    </AssociationSet>
+    <AssociationSet Name="NagradaDaje" Association="ModelFirst.Store.NagradaDaje">
+      <End Role="Nagrada" EntitySet="Nagradas" />
+      <End Role="Daje" EntitySet="Dajes" />
+    </AssociationSet>
+    <AssociationSet Name="UcestvujeOsvaja" Association="ModelFirst.Store.UcestvujeOsvaja">
+      <End Role="Ucestvuje" EntitySet="Ucestvujes" />
+      <End Role="Osvaja" EntitySet="Osvajas" />
+    </AssociationSet>
+    <AssociationSet Name="DajeOsvaja" Association="ModelFirst.Store.DajeOsvaja">
+      <End Role="Daje" EntitySet="Dajes" />
+      <End Role="Osvaja" EntitySet="Osvajas" />
+    </AssociationSet>
+    <AssociationSet Name="BendPripada" Association="ModelFirst.Store.BendPripada">
+      <End Role="Bend" EntitySet="Bends" />
+      <End Role="Pripada" EntitySet="Pripadas" />
+    </AssociationSet>
+    <AssociationSet Name="ZanrPripada" Association="ModelFirst.Store.ZanrPripada">
+      <End Role="Zanr" EntitySet="Zanrs" />
+      <End Role="Pripada" EntitySet="Pripadas" />
+    </AssociationSet>
+    <AssociationSet Name="BendSvira" Association="ModelFirst.Store.BendSvira">
+      <End Role="Bend" EntitySet="Bends" />
+      <End Role="Svira" EntitySet="Sviras" />
+    </AssociationSet>
+    <AssociationSet Name="MuzicarSvira" Association="ModelFirst.Store.MuzicarSvira">
+      <End Role="Muzicar" EntitySet="Muzicars" />
+      <End Role="Svira" EntitySet="Sviras" />
+    </AssociationSet>
+    <AssociationSet Name="BendSnima" Association="ModelFirst.Store.BendSnima">
+      <End Role="Bend" EntitySet="Bends" />
+      <End Role="Snima" EntitySet="Snimas" />
+    </AssociationSet>
+    <AssociationSet Name="AlbumSnima" Association="ModelFirst.Store.AlbumSnima">
+      <End Role="Album" EntitySet="Albums" />
+      <End Role="Snima" EntitySet="Snimas" />
+    </AssociationSet>
+    <AssociationSet Name="AlbumIzdaje" Association="ModelFirst.Store.AlbumIzdaje">
+      <End Role="Album" EntitySet="Albums" />
+      <End Role="Izdaje" EntitySet="Izdajes" />
+    </AssociationSet>
+    <AssociationSet Name="MuzickaIzdavackaKucaIzdaje" Association="ModelFirst.Store.MuzickaIzdavackaKucaIzdaje">
+      <End Role="MuzickaIzdavackaKuca" EntitySet="MuzickaIzdavackaKucas" />
+      <End Role="Izdaje" EntitySet="Izdajes" />
+    </AssociationSet>
+    <AssociationSet Name="BendOdrzi" Association="ModelFirst.Store.BendOdrzi">
+      <End Role="Bend" EntitySet="Bends" />
+      <End Role="Odrzi" EntitySet="Odrzis" />
+    </AssociationSet>
+    <AssociationSet Name="KoncertOdrzi" Association="ModelFirst.Store.KoncertOdrzi">
+      <End Role="Koncert" EntitySet="Koncerts" />
+      <End Role="Odrzi" EntitySet="Odrzis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Gitarista_inherits_Muzicar" Association="ModelFirst.Store.FK_Gitarista_inherits_Muzicar">
+      <End Role="Muzicar" EntitySet="Muzicars" />
+      <End Role="Gitarista" EntitySet="Muzicars_Gitarista" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bubnjar_inherits_Muzicar" Association="ModelFirst.Store.FK_Bubnjar_inherits_Muzicar">
+      <End Role="Muzicar" EntitySet="Muzicars" />
+      <End Role="Bubnjar" EntitySet="Muzicars_Bubnjar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Klavijaturista_inherits_Muzicar" Association="ModelFirst.Store.FK_Klavijaturista_inherits_Muzicar">
+      <End Role="Muzicar" EntitySet="Muzicars" />
+      <End Role="Klavijaturista" EntitySet="Muzicars_Klavijaturista" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Bends">
+    <Key>
+      <PropertyRef Name="IdBenda" />
+    </Key>
+    <Property Name="IdBenda" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NazB" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Logo" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Festivals">
+    <Key>
+      <PropertyRef Name="IdF" />
+    </Key>
+    <Property Name="IdF" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NazF" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ModrzF" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ucestvujes">
+    <Key>
+      <PropertyRef Name="BendIdBenda" />
+      <PropertyRef Name="FestivalIdf" />
+    </Key>
+    <Property Name="BendIdBenda" Type="int" Nullable="false" />
+    <Property Name="FestivalIdf" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Zanrs">
+    <Key>
+      <PropertyRef Name="Idz" />
+    </Key>
+    <Property Name="Idz" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Naziv" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Muzicars">
+    <Key>
+      <PropertyRef Name="Jmbg" />
+    </Key>
+    <Property Name="Jmbg" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ime" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Prz" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Albums">
+    <Key>
+      <PropertyRef Name="IdAlb" />
+    </Key>
+    <Property Name="IdAlb" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NazLab" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Cd" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MuzickaIzdavackaKucas">
+    <Key>
+      <PropertyRef Name="Idmik" />
+    </Key>
+    <Property Name="Idmik" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NazMik" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AdrMik" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Koncerts">
+    <Key>
+      <PropertyRef Name="IdKon" />
+    </Key>
+    <Property Name="IdKon" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NazKon" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MoKon" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DatumKon" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Menadzers">
+    <Key>
+      <PropertyRef Name="IdMen" />
+    </Key>
+    <Property Name="IdMen" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImeMen" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BendIdBenda" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Nagradas">
+    <Key>
+      <PropertyRef Name="IdNag" />
+    </Key>
+    <Property Name="IdNag" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NazNag" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Dajes">
+    <Key>
+      <PropertyRef Name="FestivalIdF" />
+      <PropertyRef Name="NagradaIdNag" />
+    </Key>
+    <Property Name="FestivalIdF" Type="int" Nullable="false" />
+    <Property Name="NagradaIdNag" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Osvajas">
+    <Key>
+      <PropertyRef Name="UcestvujeBendIdBenda" />
+      <PropertyRef Name="UcestvujeFestivalIdf" />
+      <PropertyRef Name="DajeFestivalIdF" />
+      <PropertyRef Name="DajeNagradaIdNag" />
+    </Key>
+    <Property Name="UcestvujeBendIdBenda" Type="int" Nullable="false" />
+    <Property Name="UcestvujeFestivalIdf" Type="int" Nullable="false" />
+    <Property Name="DajeFestivalIdF" Type="int" Nullable="false" />
+    <Property Name="DajeNagradaIdNag" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pripadas">
+    <Key>
+      <PropertyRef Name="BendIdBenda" />
+      <PropertyRef Name="ZanrIdz" />
+    </Key>
+    <Property Name="BendIdBenda" Type="int" Nullable="false" />
+    <Property Name="ZanrIdz" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sviras">
+    <Key>
+      <PropertyRef Name="BendIdBenda" />
+      <PropertyRef Name="MuzicarJmbg" />
+    </Key>
+    <Property Name="BendIdBenda" Type="int" Nullable="false" />
+    <Property Name="MuzicarJmbg" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Snimas">
+    <Key>
+      <PropertyRef Name="BendIdBenda" />
+      <PropertyRef Name="AlbumIdAlb" />
+    </Key>
+    <Property Name="BendIdBenda" Type="int" Nullable="false" />
+    <Property Name="AlbumIdAlb" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Izdajes">
+    <Key>
+      <PropertyRef Name="AlbumIdAlb" />
+      <PropertyRef Name="MuzickaIzdavackaKucaIdmik" />
+    </Key>
+    <Property Name="AlbumIdAlb" Type="int" Nullable="false" />
+    <Property Name="MuzickaIzdavackaKucaIdmik" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Odrzis">
+    <Key>
+      <PropertyRef Name="BendIdBenda" />
+      <PropertyRef Name="KoncertIdKon" />
+    </Key>
+    <Property Name="BendIdBenda" Type="int" Nullable="false" />
+    <Property Name="KoncertIdKon" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Muzicars_Gitarista">
+    <Key>
+      <PropertyRef Name="Jmbg" />
+    </Key>
+    <Property Name="Jmbg" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Muzicars_Bubnjar">
+    <Key>
+      <PropertyRef Name="Jmbg" />
+    </Key>
+    <Property Name="Jmbg" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Muzicars_Klavijaturista">
+    <Key>
+      <PropertyRef Name="Jmbg" />
+    </Key>
+    <Property Name="Jmbg" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="BendUcestvuje">
+    <End Role="Bend" Type="ModelFirst.Store.Bends" Multiplicity="1" />
+    <End Role="Ucestvuje" Type="ModelFirst.Store.Ucestvujes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bend">
+        <PropertyRef Name="IdBenda" />
+      </Principal>
+      <Dependent Role="Ucestvuje">
+        <PropertyRef Name="BendIdBenda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UcestvujeFestival">
+    <End Role="Ucestvuje" Type="ModelFirst.Store.Ucestvujes" Multiplicity="*" />
+    <End Role="Festival" Type="ModelFirst.Store.Festivals" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Festival">
+        <PropertyRef Name="IdF" />
+      </Principal>
+      <Dependent Role="Ucestvuje">
+        <PropertyRef Name="FestivalIdf" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BendMenadzer">
+    <End Role="Bend" Type="ModelFirst.Store.Bends" Multiplicity="0..1" />
+    <End Role="Menadzer" Type="ModelFirst.Store.Menadzers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bend">
+        <PropertyRef Name="IdBenda" />
+      </Principal>
+      <Dependent Role="Menadzer">
+        <PropertyRef Name="BendIdBenda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FestivalDaje">
+    <End Role="Festival" Type="ModelFirst.Store.Festivals" Multiplicity="1" />
+    <End Role="Daje" Type="ModelFirst.Store.Dajes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Festival">
+        <PropertyRef Name="IdF" />
+      </Principal>
+      <Dependent Role="Daje">
+        <PropertyRef Name="FestivalIdF" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="NagradaDaje">
+    <End Role="Nagrada" Type="ModelFirst.Store.Nagradas" Multiplicity="1" />
+    <End Role="Daje" Type="ModelFirst.Store.Dajes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nagrada">
+        <PropertyRef Name="IdNag" />
+      </Principal>
+      <Dependent Role="Daje">
+        <PropertyRef Name="NagradaIdNag" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UcestvujeOsvaja">
+    <End Role="Ucestvuje" Type="ModelFirst.Store.Ucestvujes" Multiplicity="1" />
+    <End Role="Osvaja" Type="ModelFirst.Store.Osvajas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ucestvuje">
+        <PropertyRef Name="BendIdBenda" />
+        <PropertyRef Name="FestivalIdf" />
+      </Principal>
+      <Dependent Role="Osvaja">
+        <PropertyRef Name="UcestvujeBendIdBenda" />
+        <PropertyRef Name="UcestvujeFestivalIdf" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DajeOsvaja">
+    <End Role="Daje" Type="ModelFirst.Store.Dajes" Multiplicity="1" />
+    <End Role="Osvaja" Type="ModelFirst.Store.Osvajas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Daje">
+        <PropertyRef Name="FestivalIdF" />
+        <PropertyRef Name="NagradaIdNag" />
+      </Principal>
+      <Dependent Role="Osvaja">
+        <PropertyRef Name="DajeFestivalIdF" />
+        <PropertyRef Name="DajeNagradaIdNag" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BendPripada">
+    <End Role="Bend" Type="ModelFirst.Store.Bends" Multiplicity="1" />
+    <End Role="Pripada" Type="ModelFirst.Store.Pripadas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bend">
+        <PropertyRef Name="IdBenda" />
+      </Principal>
+      <Dependent Role="Pripada">
+        <PropertyRef Name="BendIdBenda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ZanrPripada">
+    <End Role="Zanr" Type="ModelFirst.Store.Zanrs" Multiplicity="1" />
+    <End Role="Pripada" Type="ModelFirst.Store.Pripadas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Zanr">
+        <PropertyRef Name="Idz" />
+      </Principal>
+      <Dependent Role="Pripada">
+        <PropertyRef Name="ZanrIdz" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BendSvira">
+    <End Role="Bend" Type="ModelFirst.Store.Bends" Multiplicity="1" />
+    <End Role="Svira" Type="ModelFirst.Store.Sviras" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bend">
+        <PropertyRef Name="IdBenda" />
+      </Principal>
+      <Dependent Role="Svira">
+        <PropertyRef Name="BendIdBenda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MuzicarSvira">
+    <End Role="Muzicar" Type="ModelFirst.Store.Muzicars" Multiplicity="1" />
+    <End Role="Svira" Type="ModelFirst.Store.Sviras" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Muzicar">
+        <PropertyRef Name="Jmbg" />
+      </Principal>
+      <Dependent Role="Svira">
+        <PropertyRef Name="MuzicarJmbg" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BendSnima">
+    <End Role="Bend" Type="ModelFirst.Store.Bends" Multiplicity="1" />
+    <End Role="Snima" Type="ModelFirst.Store.Snimas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bend">
+        <PropertyRef Name="IdBenda" />
+      </Principal>
+      <Dependent Role="Snima">
+        <PropertyRef Name="BendIdBenda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AlbumSnima">
+    <End Role="Album" Type="ModelFirst.Store.Albums" Multiplicity="1" />
+    <End Role="Snima" Type="ModelFirst.Store.Snimas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Album">
+        <PropertyRef Name="IdAlb" />
+      </Principal>
+      <Dependent Role="Snima">
+        <PropertyRef Name="AlbumIdAlb" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AlbumIzdaje">
+    <End Role="Album" Type="ModelFirst.Store.Albums" Multiplicity="1" />
+    <End Role="Izdaje" Type="ModelFirst.Store.Izdajes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Album">
+        <PropertyRef Name="IdAlb" />
+      </Principal>
+      <Dependent Role="Izdaje">
+        <PropertyRef Name="AlbumIdAlb" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MuzickaIzdavackaKucaIzdaje">
+    <End Role="MuzickaIzdavackaKuca" Type="ModelFirst.Store.MuzickaIzdavackaKucas" Multiplicity="1" />
+    <End Role="Izdaje" Type="ModelFirst.Store.Izdajes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MuzickaIzdavackaKuca">
+        <PropertyRef Name="Idmik" />
+      </Principal>
+      <Dependent Role="Izdaje">
+        <PropertyRef Name="MuzickaIzdavackaKucaIdmik" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BendOdrzi">
+    <End Role="Bend" Type="ModelFirst.Store.Bends" Multiplicity="1" />
+    <End Role="Odrzi" Type="ModelFirst.Store.Odrzis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bend">
+        <PropertyRef Name="IdBenda" />
+      </Principal>
+      <Dependent Role="Odrzi">
+        <PropertyRef Name="BendIdBenda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="KoncertOdrzi">
+    <End Role="Koncert" Type="ModelFirst.Store.Koncerts" Multiplicity="1" />
+    <End Role="Odrzi" Type="ModelFirst.Store.Odrzis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Koncert">
+        <PropertyRef Name="IdKon" />
+      </Principal>
+      <Dependent Role="Odrzi">
+        <PropertyRef Name="KoncertIdKon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Gitarista_inherits_Muzicar">
+    <End Role="Muzicar" Type="ModelFirst.Store.Muzicars" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Gitarista" Type="ModelFirst.Store.Muzicars_Gitarista" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Muzicar">
+        <PropertyRef Name="Jmbg" />
+      </Principal>
+      <Dependent Role="Gitarista">
+        <PropertyRef Name="Jmbg" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bubnjar_inherits_Muzicar">
+    <End Role="Muzicar" Type="ModelFirst.Store.Muzicars" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Bubnjar" Type="ModelFirst.Store.Muzicars_Bubnjar" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Muzicar">
+        <PropertyRef Name="Jmbg" />
+      </Principal>
+      <Dependent Role="Bubnjar">
+        <PropertyRef Name="Jmbg" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Klavijaturista_inherits_Muzicar">
+    <End Role="Muzicar" Type="ModelFirst.Store.Muzicars" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Klavijaturista" Type="ModelFirst.Store.Muzicars_Klavijaturista" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Muzicar">
+        <PropertyRef Name="Jmbg" />
+      </Principal>
+      <Dependent Role="Klavijaturista">
+        <PropertyRef Name="Jmbg" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ModelFirst" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="ModelFirstContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Bends" EntityType="ModelFirst.Bend" />
+          <EntitySet Name="Festivals" EntityType="ModelFirst.Festival" />
+          <EntitySet Name="Ucestvujes" EntityType="ModelFirst.Ucestvuje" />
+          <AssociationSet Name="BendUcestvuje" Association="ModelFirst.BendUcestvuje">
+            <End Role="Bend" EntitySet="Bends" />
+            <End Role="Ucestvuje" EntitySet="Ucestvujes" />
+          </AssociationSet>
+          <AssociationSet Name="UcestvujeFestival" Association="ModelFirst.UcestvujeFestival">
+            <End Role="Ucestvuje" EntitySet="Ucestvujes" />
+            <End Role="Festival" EntitySet="Festivals" />
+          </AssociationSet>
+          <EntitySet Name="Zanrs" EntityType="ModelFirst.Zanr" />
+          <EntitySet Name="Muzicars" EntityType="ModelFirst.Muzicar" />
+          <EntitySet Name="Albums" EntityType="ModelFirst.Album" />
+          <EntitySet Name="MuzickaIzdavackaKucas" EntityType="ModelFirst.MuzickaIzdavackaKuca" />
+          <EntitySet Name="Koncerts" EntityType="ModelFirst.Koncert" />
+          <EntitySet Name="Menadzers" EntityType="ModelFirst.Menadzer" />
+          <AssociationSet Name="BendMenadzer" Association="ModelFirst.BendMenadzer">
+            <End Role="Bend" EntitySet="Bends" />
+            <End Role="Menadzer" EntitySet="Menadzers" />
+          </AssociationSet>
+          <EntitySet Name="Nagradas" EntityType="ModelFirst.Nagrada" />
+          <EntitySet Name="Dajes" EntityType="ModelFirst.Daje" />
+          <AssociationSet Name="FestivalDaje" Association="ModelFirst.FestivalDaje">
+            <End Role="Festival" EntitySet="Festivals" />
+            <End Role="Daje" EntitySet="Dajes" />
+          </AssociationSet>
+          <AssociationSet Name="NagradaDaje" Association="ModelFirst.NagradaDaje">
+            <End Role="Nagrada" EntitySet="Nagradas" />
+            <End Role="Daje" EntitySet="Dajes" />
+          </AssociationSet>
+          <EntitySet Name="Osvajas" EntityType="ModelFirst.Osvaja" />
+          <AssociationSet Name="UcestvujeOsvaja" Association="ModelFirst.UcestvujeOsvaja">
+            <End Role="Ucestvuje" EntitySet="Ucestvujes" />
+            <End Role="Osvaja" EntitySet="Osvajas" />
+          </AssociationSet>
+          <AssociationSet Name="DajeOsvaja" Association="ModelFirst.DajeOsvaja">
+            <End Role="Daje" EntitySet="Dajes" />
+            <End Role="Osvaja" EntitySet="Osvajas" />
+          </AssociationSet>
+          <EntitySet Name="Pripadas" EntityType="ModelFirst.Pripada" />
+          <AssociationSet Name="BendPripada" Association="ModelFirst.BendPripada">
+            <End Role="Bend" EntitySet="Bends" />
+            <End Role="Pripada" EntitySet="Pripadas" />
+          </AssociationSet>
+          <AssociationSet Name="ZanrPripada" Association="ModelFirst.ZanrPripada">
+            <End Role="Zanr" EntitySet="Zanrs" />
+            <End Role="Pripada" EntitySet="Pripadas" />
+          </AssociationSet>
+          <EntitySet Name="Sviras" EntityType="ModelFirst.Svira" />
+          <AssociationSet Name="BendSvira" Association="ModelFirst.BendSvira">
+            <End Role="Bend" EntitySet="Bends" />
+            <End Role="Svira" EntitySet="Sviras" />
+          </AssociationSet>
+          <AssociationSet Name="MuzicarSvira" Association="ModelFirst.MuzicarSvira">
+            <End Role="Muzicar" EntitySet="Muzicars" />
+            <End Role="Svira" EntitySet="Sviras" />
+          </AssociationSet>
+          <EntitySet Name="Snimas" EntityType="ModelFirst.Snima" />
+          <AssociationSet Name="BendSnima" Association="ModelFirst.BendSnima">
+            <End Role="Bend" EntitySet="Bends" />
+            <End Role="Snima" EntitySet="Snimas" />
+          </AssociationSet>
+          <AssociationSet Name="AlbumSnima" Association="ModelFirst.AlbumSnima">
+            <End Role="Album" EntitySet="Albums" />
+            <End Role="Snima" EntitySet="Snimas" />
+          </AssociationSet>
+          <EntitySet Name="Izdajes" EntityType="ModelFirst.Izdaje" />
+          <AssociationSet Name="AlbumIzdaje" Association="ModelFirst.AlbumIzdaje">
+            <End Role="Album" EntitySet="Albums" />
+            <End Role="Izdaje" EntitySet="Izdajes" />
+          </AssociationSet>
+          <AssociationSet Name="MuzickaIzdavackaKucaIzdaje" Association="ModelFirst.MuzickaIzdavackaKucaIzdaje">
+            <End Role="MuzickaIzdavackaKuca" EntitySet="MuzickaIzdavackaKucas" />
+            <End Role="Izdaje" EntitySet="Izdajes" />
+          </AssociationSet>
+          <EntitySet Name="Odrzis" EntityType="ModelFirst.Odrzi" />
+          <AssociationSet Name="BendOdrzi" Association="ModelFirst.BendOdrzi">
+            <End Role="Bend" EntitySet="Bends" />
+            <End Role="Odrzi" EntitySet="Odrzis" />
+          </AssociationSet>
+          <AssociationSet Name="KoncertOdrzi" Association="ModelFirst.KoncertOdrzi">
+            <End Role="Koncert" EntitySet="Koncerts" />
+            <End Role="Odrzi" EntitySet="Odrzis" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="Bend">
+          <Key>
+            <PropertyRef Name="IdBenda" />
+          </Key>
+          <Property Name="IdBenda" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NazB" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Logo" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Ucestvujes" Relationship="ModelFirst.BendUcestvuje" FromRole="Bend" ToRole="Ucestvuje" />
+          <NavigationProperty Name="Menadzers" Relationship="ModelFirst.BendMenadzer" FromRole="Bend" ToRole="Menadzer" />
+          <NavigationProperty Name="Pripadas" Relationship="ModelFirst.BendPripada" FromRole="Bend" ToRole="Pripada" />
+          <NavigationProperty Name="Sviras" Relationship="ModelFirst.BendSvira" FromRole="Bend" ToRole="Svira" />
+          <NavigationProperty Name="Snimas" Relationship="ModelFirst.BendSnima" FromRole="Bend" ToRole="Snima" />
+          <NavigationProperty Name="Odrzis" Relationship="ModelFirst.BendOdrzi" FromRole="Bend" ToRole="Odrzi" />
+        </EntityType>
+        <EntityType Name="Festival">
+          <Key>
+            <PropertyRef Name="IdF" />
+          </Key>
+          <Property Name="IdF" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NazF" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ModrzF" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Ucestvujes" Relationship="ModelFirst.UcestvujeFestival" FromRole="Festival" ToRole="Ucestvuje" />
+          <NavigationProperty Name="Dajes" Relationship="ModelFirst.FestivalDaje" FromRole="Festival" ToRole="Daje" />
+        </EntityType>
+        <EntityType Name="Ucestvuje">
+          <Key>
+            <PropertyRef Name="BendIdBenda" />
+            <PropertyRef Name="FestivalIdf" />
+          </Key>
+          <NavigationProperty Name="Bend" Relationship="ModelFirst.BendUcestvuje" FromRole="Ucestvuje" ToRole="Bend" />
+          <Property Name="BendIdBenda" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Festival" Relationship="ModelFirst.UcestvujeFestival" FromRole="Ucestvuje" ToRole="Festival" />
+          <Property Name="FestivalIdf" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Osvajas" Relationship="ModelFirst.UcestvujeOsvaja" FromRole="Ucestvuje" ToRole="Osvaja" />
+        </EntityType>
+        <Association Name="BendUcestvuje">
+          <End Type="ModelFirst.Bend" Role="Bend" Multiplicity="1" />
+          <End Type="ModelFirst.Ucestvuje" Role="Ucestvuje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bend">
+              <PropertyRef Name="IdBenda" />
+            </Principal>
+            <Dependent Role="Ucestvuje">
+              <PropertyRef Name="BendIdBenda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UcestvujeFestival">
+          <End Type="ModelFirst.Ucestvuje" Role="Ucestvuje" Multiplicity="*" />
+          <End Type="ModelFirst.Festival" Role="Festival" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Festival">
+              <PropertyRef Name="IdF" />
+            </Principal>
+            <Dependent Role="Ucestvuje">
+              <PropertyRef Name="FestivalIdf" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Zanr">
+          <Key>
+            <PropertyRef Name="Idz" />
+          </Key>
+          <Property Name="Idz" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naziv" Type="String" Nullable="false" />
+          <NavigationProperty Name="Pripadas" Relationship="ModelFirst.ZanrPripada" FromRole="Zanr" ToRole="Pripada" />
+        </EntityType>
+        <EntityType Name="Muzicar" Abstract="false">
+          <Key>
+            <PropertyRef Name="Jmbg" />
+          </Key>
+          <Property Name="Jmbg" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ime" Type="String" Nullable="false" />
+          <Property Name="Prz" Type="String" Nullable="false" />
+          <NavigationProperty Name="Sviras" Relationship="ModelFirst.MuzicarSvira" FromRole="Muzicar" ToRole="Svira" />
+        </EntityType>
+        <EntityType Name="Album">
+          <Key>
+            <PropertyRef Name="IdAlb" />
+          </Key>
+          <Property Name="IdAlb" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NazLab" Type="String" Nullable="false" />
+          <Property Name="Cd" Type="String" Nullable="false" />
+          <NavigationProperty Name="Snimas" Relationship="ModelFirst.AlbumSnima" FromRole="Album" ToRole="Snima" />
+          <NavigationProperty Name="Izdajes" Relationship="ModelFirst.AlbumIzdaje" FromRole="Album" ToRole="Izdaje" />
+        </EntityType>
+        <EntityType Name="MuzickaIzdavackaKuca">
+          <Key>
+            <PropertyRef Name="Idmik" />
+          </Key>
+          <Property Name="Idmik" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NazMik" Type="String" Nullable="false" />
+          <Property Name="AdrMik" Type="String" Nullable="false" />
+          <NavigationProperty Name="Izdajes" Relationship="ModelFirst.MuzickaIzdavackaKucaIzdaje" FromRole="MuzickaIzdavackaKuca" ToRole="Izdaje" />
+        </EntityType>
+        <EntityType Name="Koncert">
+          <Key>
+            <PropertyRef Name="IdKon" />
+          </Key>
+          <Property Name="IdKon" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NazKon" Type="String" Nullable="false" />
+          <Property Name="MoKon" Type="String" Nullable="false" />
+          <Property Name="DatumKon" Type="String" Nullable="false" />
+          <NavigationProperty Name="Odrzis" Relationship="ModelFirst.KoncertOdrzi" FromRole="Koncert" ToRole="Odrzi" />
+        </EntityType>
+        <EntityType Name="Menadzer">
+          <Key>
+            <PropertyRef Name="IdMen" />
+          </Key>
+          <Property Name="IdMen" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ImeMen" Type="String" Nullable="false" />
+          <NavigationProperty Name="Bend" Relationship="ModelFirst.BendMenadzer" FromRole="Menadzer" ToRole="Bend" />
+          <Property Name="BendIdBenda" Type="Int32" Nullable="true" />
+        </EntityType>
+        <Association Name="BendMenadzer">
+          <End Type="ModelFirst.Bend" Role="Bend" Multiplicity="0..1" />
+          <End Type="ModelFirst.Menadzer" Role="Menadzer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bend">
+              <PropertyRef Name="IdBenda" />
+            </Principal>
+            <Dependent Role="Menadzer">
+              <PropertyRef Name="BendIdBenda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Gitarista" BaseType="ModelFirst.Muzicar" />
+        <ComplexType Name="ComplexType1" />
+        <EntityType Name="Bubnjar" BaseType="ModelFirst.Muzicar" />
+        <EntityType Name="Klavijaturista" BaseType="ModelFirst.Muzicar" />
+        <EntityType Name="Nagrada">
+          <Key>
+            <PropertyRef Name="IdNag" />
+          </Key>
+          <Property Name="IdNag" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NazNag" Type="String" Nullable="false" />
+          <NavigationProperty Name="Dajes" Relationship="ModelFirst.NagradaDaje" FromRole="Nagrada" ToRole="Daje" />
+        </EntityType>
+        <EntityType Name="Daje">
+          <Key>
+            <PropertyRef Name="FestivalIdF" />
+            <PropertyRef Name="NagradaIdNag" />
+          </Key>
+          <NavigationProperty Name="Festival" Relationship="ModelFirst.FestivalDaje" FromRole="Daje" ToRole="Festival" />
+          <Property Name="FestivalIdF" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Nagrada" Relationship="ModelFirst.NagradaDaje" FromRole="Daje" ToRole="Nagrada" />
+          <Property Name="NagradaIdNag" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Osvajas" Relationship="ModelFirst.DajeOsvaja" FromRole="Daje" ToRole="Osvaja" />
+        </EntityType>
+        <Association Name="FestivalDaje">
+          <End Type="ModelFirst.Festival" Role="Festival" Multiplicity="1" />
+          <End Type="ModelFirst.Daje" Role="Daje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Festival">
+              <PropertyRef Name="IdF" />
+            </Principal>
+            <Dependent Role="Daje">
+              <PropertyRef Name="FestivalIdF" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="NagradaDaje">
+          <End Type="ModelFirst.Nagrada" Role="Nagrada" Multiplicity="1" />
+          <End Type="ModelFirst.Daje" Role="Daje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nagrada">
+              <PropertyRef Name="IdNag" />
+            </Principal>
+            <Dependent Role="Daje">
+              <PropertyRef Name="NagradaIdNag" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Osvaja" >
+          <Key>
+            <PropertyRef Name="UcestvujeBendIdBenda" />
+            <PropertyRef Name="UcestvujeFestivalIdf" />
+            <PropertyRef Name="DajeFestivalIdF" />
+            <PropertyRef Name="DajeNagradaIdNag" />
+          </Key>
+          <NavigationProperty Name="Ucestvuje" Relationship="ModelFirst.UcestvujeOsvaja" FromRole="Osvaja" ToRole="Ucestvuje" />
+          <Property Name="UcestvujeBendIdBenda" Type="Int32" Nullable="false" />
+          <Property Name="UcestvujeFestivalIdf" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Daje" Relationship="ModelFirst.DajeOsvaja" FromRole="Osvaja" ToRole="Daje" />
+          <Property Name="DajeFestivalIdF" Type="Int32" Nullable="false" />
+          <Property Name="DajeNagradaIdNag" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="UcestvujeOsvaja">
+          <End Type="ModelFirst.Ucestvuje" Role="Ucestvuje" Multiplicity="1" />
+          <End Type="ModelFirst.Osvaja" Role="Osvaja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ucestvuje">
+              <PropertyRef Name="BendIdBenda" />
+              <PropertyRef Name="FestivalIdf" />
+            </Principal>
+            <Dependent Role="Osvaja">
+              <PropertyRef Name="UcestvujeBendIdBenda" />
+              <PropertyRef Name="UcestvujeFestivalIdf" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DajeOsvaja">
+          <End Type="ModelFirst.Daje" Role="Daje" Multiplicity="1" />
+          <End Type="ModelFirst.Osvaja" Role="Osvaja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Daje">
+              <PropertyRef Name="FestivalIdF" />
+              <PropertyRef Name="NagradaIdNag" />
+            </Principal>
+            <Dependent Role="Osvaja">
+              <PropertyRef Name="DajeFestivalIdF" />
+              <PropertyRef Name="DajeNagradaIdNag" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Pripada" >
+          <Key>
+            <PropertyRef Name="BendIdBenda" />
+            <PropertyRef Name="ZanrIdz" />
+          </Key>
+          <NavigationProperty Name="Bend" Relationship="ModelFirst.BendPripada" FromRole="Pripada" ToRole="Bend" />
+          <Property Name="BendIdBenda" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Zanr" Relationship="ModelFirst.ZanrPripada" FromRole="Pripada" ToRole="Zanr" />
+          <Property Name="ZanrIdz" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="BendPripada">
+          <End Type="ModelFirst.Bend" Role="Bend" Multiplicity="1" />
+          <End Type="ModelFirst.Pripada" Role="Pripada" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bend">
+              <PropertyRef Name="IdBenda" />
+            </Principal>
+            <Dependent Role="Pripada">
+              <PropertyRef Name="BendIdBenda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ZanrPripada">
+          <End Type="ModelFirst.Zanr" Role="Zanr" Multiplicity="1" />
+          <End Type="ModelFirst.Pripada" Role="Pripada" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zanr">
+              <PropertyRef Name="Idz" />
+            </Principal>
+            <Dependent Role="Pripada">
+              <PropertyRef Name="ZanrIdz" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Svira" >
+          <Key>
+            <PropertyRef Name="BendIdBenda" />
+            <PropertyRef Name="MuzicarJmbg" />
+          </Key>
+          <NavigationProperty Name="Bend" Relationship="ModelFirst.BendSvira" FromRole="Svira" ToRole="Bend" />
+          <Property Name="BendIdBenda" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Muzicar" Relationship="ModelFirst.MuzicarSvira" FromRole="Svira" ToRole="Muzicar" />
+          <Property Name="MuzicarJmbg" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="BendSvira">
+          <End Type="ModelFirst.Bend" Role="Bend" Multiplicity="1" />
+          <End Type="ModelFirst.Svira" Role="Svira" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bend">
+              <PropertyRef Name="IdBenda" />
+            </Principal>
+            <Dependent Role="Svira">
+              <PropertyRef Name="BendIdBenda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MuzicarSvira">
+          <End Type="ModelFirst.Muzicar" Role="Muzicar" Multiplicity="1" />
+          <End Type="ModelFirst.Svira" Role="Svira" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Muzicar">
+              <PropertyRef Name="Jmbg" />
+            </Principal>
+            <Dependent Role="Svira">
+              <PropertyRef Name="MuzicarJmbg" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Snima" >
+          <Key>
+            <PropertyRef Name="BendIdBenda" />
+            <PropertyRef Name="AlbumIdAlb" />
+          </Key>
+          <NavigationProperty Name="Bend" Relationship="ModelFirst.BendSnima" FromRole="Snima" ToRole="Bend" />
+          <Property Name="BendIdBenda" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Album" Relationship="ModelFirst.AlbumSnima" FromRole="Snima" ToRole="Album" />
+          <Property Name="AlbumIdAlb" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="BendSnima">
+          <End Type="ModelFirst.Bend" Role="Bend" Multiplicity="1" />
+          <End Type="ModelFirst.Snima" Role="Snima" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bend">
+              <PropertyRef Name="IdBenda" />
+            </Principal>
+            <Dependent Role="Snima">
+              <PropertyRef Name="BendIdBenda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AlbumSnima">
+          <End Type="ModelFirst.Album" Role="Album" Multiplicity="1" />
+          <End Type="ModelFirst.Snima" Role="Snima" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Album">
+              <PropertyRef Name="IdAlb" />
+            </Principal>
+            <Dependent Role="Snima">
+              <PropertyRef Name="AlbumIdAlb" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Izdaje" >
+          <Key>
+            <PropertyRef Name="AlbumIdAlb" />
+            <PropertyRef Name="MuzickaIzdavackaKucaIdmik" />
+          </Key>
+          <NavigationProperty Name="Album" Relationship="ModelFirst.AlbumIzdaje" FromRole="Izdaje" ToRole="Album" />
+          <Property Name="AlbumIdAlb" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="MuzickaIzdavackaKuca" Relationship="ModelFirst.MuzickaIzdavackaKucaIzdaje" FromRole="Izdaje" ToRole="MuzickaIzdavackaKuca" />
+          <Property Name="MuzickaIzdavackaKucaIdmik" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="AlbumIzdaje">
+          <End Type="ModelFirst.Album" Role="Album" Multiplicity="1" />
+          <End Type="ModelFirst.Izdaje" Role="Izdaje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Album">
+              <PropertyRef Name="IdAlb" />
+            </Principal>
+            <Dependent Role="Izdaje">
+              <PropertyRef Name="AlbumIdAlb" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MuzickaIzdavackaKucaIzdaje">
+          <End Type="ModelFirst.MuzickaIzdavackaKuca" Role="MuzickaIzdavackaKuca" Multiplicity="1" />
+          <End Type="ModelFirst.Izdaje" Role="Izdaje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MuzickaIzdavackaKuca">
+              <PropertyRef Name="Idmik" />
+            </Principal>
+            <Dependent Role="Izdaje">
+              <PropertyRef Name="MuzickaIzdavackaKucaIdmik" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Odrzi" >
+          <Key>
+            <PropertyRef Name="BendIdBenda" />
+            <PropertyRef Name="KoncertIdKon" />
+          </Key>
+          <NavigationProperty Name="Bend" Relationship="ModelFirst.BendOdrzi" FromRole="Odrzi" ToRole="Bend" />
+          <Property Name="BendIdBenda" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Koncert" Relationship="ModelFirst.KoncertOdrzi" FromRole="Odrzi" ToRole="Koncert" />
+          <Property Name="KoncertIdKon" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="BendOdrzi">
+          <End Type="ModelFirst.Bend" Role="Bend" Multiplicity="1" />
+          <End Type="ModelFirst.Odrzi" Role="Odrzi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bend">
+              <PropertyRef Name="IdBenda" />
+            </Principal>
+            <Dependent Role="Odrzi">
+              <PropertyRef Name="BendIdBenda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="KoncertOdrzi">
+          <End Type="ModelFirst.Koncert" Role="Koncert" Multiplicity="1" />
+          <End Type="ModelFirst.Odrzi" Role="Odrzi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Koncert">
+              <PropertyRef Name="IdKon" />
+            </Principal>
+            <Dependent Role="Odrzi">
+              <PropertyRef Name="KoncertIdKon" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelFirstStoreContainer" CdmEntityContainer="ModelFirstContext">
+    <EntitySetMapping Name="Bends">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelFirst.Bend)">
+        <MappingFragment StoreEntitySet="Bends">
+          <ScalarProperty Name="IdBenda" ColumnName="IdBenda" />
+          <ScalarProperty Name="NazB" ColumnName="NazB" />
+          <ScalarProperty Name="Logo" ColumnName="Logo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Festivals">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelFirst.Festival)">
+        <MappingFragment StoreEntitySet="Festivals">
+          <ScalarProperty Name="IdF" ColumnName="IdF" />
+          <ScalarProperty Name="NazF" ColumnName="NazF" />
+          <ScalarProperty Name="ModrzF" ColumnName="ModrzF" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ucestvujes">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelFirst.Ucestvuje)">
+        <MappingFragment StoreEntitySet="Ucestvujes">
+          <ScalarProperty Name="BendIdBenda" ColumnName="BendIdBenda" />
+          <ScalarProperty Name="FestivalIdf" ColumnName="FestivalIdf" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zanrs">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelFirst.Zanr)">
+        <MappingFragment StoreEntitySet="Zanrs">
+          <ScalarProperty Name="Idz" ColumnName="Idz" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Muzicars">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelFirst.Muzicar)">
+        <MappingFragment StoreEntitySet="Muzicars">
+          <ScalarProperty Name="Jmbg" ColumnName="Jmbg" />
+          <ScalarProperty Name="Ime" ColumnName="Ime" />
+          <ScalarProperty Name="Prz" ColumnName="Prz" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(ModelFirst.Gitarista)">
+        <MappingFragment StoreEntitySet="Muzicars_Gitarista">
+          <ScalarProperty Name="Jmbg" ColumnName="Jmbg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(ModelFirst.Bubnjar)">
+        <MappingFragment StoreEntitySet="Muzicars_Bubnjar">
+          <ScalarProperty Name="Jmbg" ColumnName="Jmbg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(ModelFirst.Klavijaturista)">
+        <MappingFragment StoreEntitySet="Muzicars_Klavijaturista">
+          <ScalarProperty Name="Jmbg" ColumnName="Jmbg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Albums">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelFirst.Album)">
+        <MappingFragment StoreEntitySet="Albums">
+          <ScalarProperty Name="IdAlb" ColumnName="IdAlb" />
+          <ScalarProperty Name="NazLab" ColumnName="NazLab" />
+          <ScalarProperty Name="Cd" ColumnName="Cd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MuzickaIzdavackaKucas">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelFirst.MuzickaIzdavackaKuca)">
+        <MappingFragment StoreEntitySet="MuzickaIzdavackaKucas">
+          <ScalarProperty Name="Idmik" ColumnName="Idmik" />
+          <ScalarProperty Name="NazMik" ColumnName="NazMik" />
+          <ScalarProperty Name="AdrMik" ColumnName="AdrMik" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Koncerts">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelFirst.Koncert)">
+        <MappingFragment StoreEntitySet="Koncerts">
+          <ScalarProperty Name="IdKon" ColumnName="IdKon" />
+          <ScalarProperty Name="NazKon" ColumnName="NazKon" />
+          <ScalarProperty Name="MoKon" ColumnName="MoKon" />
+          <ScalarProperty Name="DatumKon" ColumnName="DatumKon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menadzers">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelFirst.Menadzer)">
+        <MappingFragment StoreEntitySet="Menadzers">
+          <ScalarProperty Name="IdMen" ColumnName="IdMen" />
+          <ScalarProperty Name="ImeMen" ColumnName="ImeMen" />
+          <ScalarProperty Name="BendIdBenda" ColumnName="BendIdBenda" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Nagradas">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelFirst.Nagrada)">
+        <MappingFragment StoreEntitySet="Nagradas">
+          <ScalarProperty Name="IdNag" ColumnName="IdNag" />
+          <ScalarProperty Name="NazNag" ColumnName="NazNag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dajes">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelFirst.Daje)">
+        <MappingFragment StoreEntitySet="Dajes">
+          <ScalarProperty Name="FestivalIdF" ColumnName="FestivalIdF" />
+          <ScalarProperty Name="NagradaIdNag" ColumnName="NagradaIdNag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Osvajas">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelFirst.Osvaja)">
+        <MappingFragment StoreEntitySet="Osvajas">
+          <ScalarProperty Name="UcestvujeBendIdBenda" ColumnName="UcestvujeBendIdBenda" />
+          <ScalarProperty Name="UcestvujeFestivalIdf" ColumnName="UcestvujeFestivalIdf" />
+          <ScalarProperty Name="DajeFestivalIdF" ColumnName="DajeFestivalIdF" />
+          <ScalarProperty Name="DajeNagradaIdNag" ColumnName="DajeNagradaIdNag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pripadas">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelFirst.Pripada)">
+        <MappingFragment StoreEntitySet="Pripadas">
+          <ScalarProperty Name="BendIdBenda" ColumnName="BendIdBenda" />
+          <ScalarProperty Name="ZanrIdz" ColumnName="ZanrIdz" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sviras">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelFirst.Svira)">
+        <MappingFragment StoreEntitySet="Sviras">
+          <ScalarProperty Name="BendIdBenda" ColumnName="BendIdBenda" />
+          <ScalarProperty Name="MuzicarJmbg" ColumnName="MuzicarJmbg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Snimas">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelFirst.Snima)">
+        <MappingFragment StoreEntitySet="Snimas">
+          <ScalarProperty Name="BendIdBenda" ColumnName="BendIdBenda" />
+          <ScalarProperty Name="AlbumIdAlb" ColumnName="AlbumIdAlb" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Izdajes">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelFirst.Izdaje)">
+        <MappingFragment StoreEntitySet="Izdajes">
+          <ScalarProperty Name="AlbumIdAlb" ColumnName="AlbumIdAlb" />
+          <ScalarProperty Name="MuzickaIzdavackaKucaIdmik" ColumnName="MuzickaIzdavackaKucaIdmik" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Odrzis">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelFirst.Odrzi)">
+        <MappingFragment StoreEntitySet="Odrzis">
+          <ScalarProperty Name="BendIdBenda" ColumnName="BendIdBenda" />
+          <ScalarProperty Name="KoncertIdKon" ColumnName="KoncertIdKon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

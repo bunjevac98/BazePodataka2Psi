@@ -1,0 +1,25 @@
+﻿<Window x:Class="BendAplikacija.KoncertView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BendAplikacija"
+        mc:Ignorable="d"
+        Title="KoncertView" Height="450" Width="800"
+        Loaded="Window_Loaded">
+    <Grid>
+        <DataGrid Name="DataGridKoncert" ItemsSource="{Binding}" SelectionChanged="DataGridKoncert_SelectionChanged" HorizontalAlignment="Left" Height="197" Margin="10,10,0,0" VerticalAlignment="Top" Width="774"/>
+        <Label Content="NazivKon" FontSize="15"  HorizontalAlignment="Left" Margin="34,249,0,0" VerticalAlignment="Top" Height="36" Width="107"/>
+        <TextBox Name="TBNazKon" HorizontalAlignment="Left" Height="36" Margin="226,249,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="683,266,0,0" VerticalAlignment="Top" Width="75" Height="29" Click="Add_Click"/>
+        <Button Content="Update" HorizontalAlignment="Left" Margin="683,322,0,0" VerticalAlignment="Top" Width="75" Height="29" Click="Update_Click"/>
+        <Button Content="Remove" HorizontalAlignment="Left" Margin="683,381,0,0" VerticalAlignment="Top" Width="75" Height="29" Click="Delete_Click"/>
+        <Label Content="MestoKon" HorizontalAlignment="Left" Margin="34,290,0,0" VerticalAlignment="Top" Width="107"/>
+        <Label Content="Datum" HorizontalAlignment="Left" Margin="34,324,0,0" VerticalAlignment="Top" Width="107"/>
+        <TextBox Name="TBMESTOKON" HorizontalAlignment="Left" Height="23" Margin="226,301,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="TBDATUM" HorizontalAlignment="Left" Height="23" Margin="226,337,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+
+
+
+    </Grid>
+</Window>

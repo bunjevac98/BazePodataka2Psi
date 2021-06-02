@@ -1,0 +1,24 @@
+﻿<Window x:Class="BendAplikacija.OsvajaView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BendAplikacija"
+        mc:Ignorable="d"
+        Title="OsvajaView" Height="450" Width="800"
+        Loaded="Window_Loaded">
+    <Grid>
+        <DataGrid Name="DataGridOsvaja" SelectionChanged="DataGridOsvaja_SelectionChanged" HorizontalAlignment="Left" Height="241" Margin="0,0,-0.4,0" VerticalAlignment="Top" Width="794"/>
+        <Label Content="UcestvujeIdBenda" HorizontalAlignment="Left" Margin="77,265,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.151,-0.166" Width="110"/>
+        <Label Content="UcestvujeIdFestival" HorizontalAlignment="Left" Margin="77,299,0,0" VerticalAlignment="Top"/>
+        <Label Content="DajeIdFestival" HorizontalAlignment="Left" Margin="77,341,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.549,0.481" Width="110"/>
+        <Label Content="DajeIdNagrada" HorizontalAlignment="Left" Margin="77,371,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.76,-1.263" Width="110"/>
+        <TextBox Name="TextBoxUcestvujeIdBenda" HorizontalAlignment="Left" Height="23" Margin="296,265,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="TextBoxUcestvujeIdFestivala" HorizontalAlignment="Left" Height="23" Margin="296,299,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="TextBoxDajeIdFestival" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="296,336,0,0"/>
+        <TextBox Name="TextBoxDajeNagrada" HorizontalAlignment="Left" Height="23" Margin="296,374,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="683,266,0,0" VerticalAlignment="Top" Width="75" Height="29" Click="Add_Click"/>
+        <Button Content="Update" HorizontalAlignment="Left" Margin="683,322,0,0" VerticalAlignment="Top" Width="75" Height="29" Click="Update_Click"/>
+        <Button Content="Remove" HorizontalAlignment="Left" Margin="683,381,0,0" VerticalAlignment="Top" Width="75" Height="29" Click="Delete_Click"/>
+    </Grid>
+</Window>
