@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/01/2021 01:21:05
--- Generated from EDMX file: C:\Users\basic\source\repos\Baze2Projekat\Baze2PRojekat\ModelFirst.edmx
+-- Date Created: 06/02/2021 22:09:34
+-- Generated from EDMX file: C:\Users\basic\Source\Repos\BazePodataka2Psi\Baze2PRojekat\Baze2PRojekat\ModelFirst.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -278,6 +278,7 @@ GO
 
 -- Creating table 'Muzicars_Gitarista'
 CREATE TABLE [dbo].[Muzicars_Gitarista] (
+    [ImeGitariste] nvarchar(max)  NOT NULL,
     [Jmbg] int  NOT NULL
 );
 GO

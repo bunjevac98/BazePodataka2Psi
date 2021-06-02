@@ -84,6 +84,7 @@ namespace BendAplikacija
                 catch (Exception)
                 {
                     MessageBox.Show("Niste dobre kljuceve uneli od festivala ili nagrade");
+                    con.Close();
                 }
             }
             else {
@@ -98,7 +99,7 @@ namespace BendAplikacija
             try
             {
                 con.Open();
-                SqlCommand comm = new SqlCommand("DELETE FROM dbo.Dajes WHERE FestivalIdF=" + PamtiKljucFestivalaDajes + "", con);
+                SqlCommand comm = new SqlCommand("DELETE FROM dbo.Dajes WHERE FestivalIdF=" + PamtiKljucFestivalaDajes + " and NagradaIdNag=" + PamtiKljucNagrade + "", con);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(comm);
                 da.Fill(ds);

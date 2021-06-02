@@ -250,6 +250,7 @@
     <Key>
       <PropertyRef Name="Jmbg" />
     </Key>
+    <Property Name="ImeGitariste" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Jmbg" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Muzicars_Bubnjar">
@@ -731,7 +732,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="Gitarista" BaseType="ModelFirst.Muzicar" />
+        <EntityType Name="Gitarista" BaseType="ModelFirst.Muzicar" >
+          <Property Name="ImeGitariste" Type="String" Nullable="false" />
+        </EntityType>
         <ComplexType Name="ComplexType1" />
         <EntityType Name="Bubnjar" BaseType="ModelFirst.Muzicar" />
         <EntityType Name="Klavijaturista" BaseType="ModelFirst.Muzicar" />
@@ -1041,6 +1044,7 @@
       <EntityTypeMapping TypeName="IsTypeOf(ModelFirst.Gitarista)">
         <MappingFragment StoreEntitySet="Muzicars_Gitarista">
           <ScalarProperty Name="Jmbg" ColumnName="Jmbg" />
+          <ScalarProperty Name="ImeGitariste" ColumnName="ImeGitariste" />
         </MappingFragment>
       </EntityTypeMapping>
       <EntityTypeMapping TypeName="IsTypeOf(ModelFirst.Bubnjar)">

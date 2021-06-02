@@ -14,5 +14,6 @@ namespace Baze2PRojekat
     
     public partial class Gitarista : Muzicar
     {
+        public string ImeGitariste { get; set; }
     }
 }

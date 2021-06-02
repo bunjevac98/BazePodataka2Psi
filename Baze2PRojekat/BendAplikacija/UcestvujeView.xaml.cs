@@ -34,11 +34,11 @@ namespace BendAplikacija
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-            int b =Int32.Parse(TextBoxIdBenda.Text);
-            int c = Int32.Parse(TextBoxIdF.Text);
-
+            
             if (TextBoxIdBenda.Text != "" && TextBoxIdF.Text != "")
             {
+                int b = Int32.Parse(TextBoxIdBenda.Text);
+                int c = Int32.Parse(TextBoxIdF.Text);
                 try
                 {
                     con.Open();
@@ -68,24 +68,33 @@ namespace BendAplikacija
         }
         private void Update_Click(object sender, RoutedEventArgs e)
         {
-            int b = Int32.Parse(TextBoxIdBenda.Text);
-            int c = Int32.Parse(TextBoxIdF.Text);
-            
-            con.Open();
-            SqlCommand comm = new SqlCommand("UPDATE dbo.Ucestvujes SET BendIdBenda=" +
-            b + ",FestivalIdf=" + c + "WHERE FestivalIdf =" + PamtiKljucFestivala + " and BendIdBenda=" +PamtiKljucBenda+"", con);
-            DataSet ds = new DataSet();
-            SqlDataAdapter da = new SqlDataAdapter(comm);
-            da.Fill(ds);
+            if (TextBoxIdBenda.Text != "" && TextBoxIdF.Text != "")
+            {
+                int b = Int32.Parse(TextBoxIdBenda.Text);
+                int c = Int32.Parse(TextBoxIdF.Text);
 
-            con.Close();
-            UcitajUcestvovanja();
+
+                con.Open();
+                SqlCommand comm = new SqlCommand("UPDATE dbo.Ucestvujes SET BendIdBenda=" +
+                b + ",FestivalIdf=" + c + "WHERE FestivalIdf =" + PamtiKljucFestivala + " and BendIdBenda=" + PamtiKljucBenda + "", con);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(comm);
+                da.Fill(ds);
+
+                con.Close();
+                UcitajUcestvovanja();
+            }
+            else
+            {
+                MessageBox.Show("Niste uneli sva polja");
+            }
+
 
         }
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
             con.Open();
-            SqlCommand comm = new SqlCommand("DELETE FROM dbo.Ucestvujes WHERE BendIdBenda=" + PamtiKljucBenda + "", con);
+            SqlCommand comm = new SqlCommand("DELETE FROM dbo.Ucestvujes WHERE BendIdBenda=" + PamtiKljucBenda + " and FestivalIdf=" + PamtiKljucFestivala + "", con);
             DataSet ds = new DataSet();
             SqlDataAdapter da = new SqlDataAdapter(comm);
             da.Fill(ds);

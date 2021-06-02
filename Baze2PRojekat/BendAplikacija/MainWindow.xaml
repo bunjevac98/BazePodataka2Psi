@@ -14,7 +14,7 @@
         <Button Content="Nagrada" HorizontalAlignment="Left" Margin="189,46,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_Nagrada"/>
         <Button Content="Koncert" HorizontalAlignment="Left" Margin="669,46,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_Koncert"/>
         <Button Content="Album" HorizontalAlignment="Left" Margin="429,46,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_Album"/>
-        <Button Content="IzdavacK" HorizontalAlignment="Left" Margin="509,46,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_IzdavacK"/>
+        <Button Content="IzdavacK" HorizontalAlignment="Left" Margin="429,105,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_IzdavacK"/>
         <Button Content="Menadzer" HorizontalAlignment="Left" Margin="589,46,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_Menadzer"/>
         <Label Content="Prikazi:" HorizontalAlignment="Left" Margin="29,10,0,0" VerticalAlignment="Top"/>
         <Button Content="Ucestvuje" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="29,76,0,0" Click="Button_Click_Ucestvuje"/>
@@ -24,7 +24,10 @@
         <Button Content="Svira" HorizontalAlignment="Left" Margin="349,76,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_Svira"/>
         <Button Content="Snima" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="429,76,0,0" Click="Button_Click_Snima" />
         <Button Content="Izdaje" HorizontalAlignment="Left" Margin="509,76,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_Izdaje"/>
-        <Button Content="Odrzi" HorizontalAlignment="Left" Margin="669,76,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_Odrzi"/>
+        <Button Content="Odrzi" HorizontalAlignment="Left" Margin="269,105,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_Odrzi"/>
+        <Button Content="Klavijaturista" HorizontalAlignment="Left" Margin="594,76,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_Klavijaturista"/>
+        <Button Content="Bubnjar" HorizontalAlignment="Left" Margin="509,46,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_Klavijaturista"/>
+        <Button Content="Gitarista" HorizontalAlignment="Left" Margin="674,76,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_Gitarista"/>
 
     </Grid>
 </Window>

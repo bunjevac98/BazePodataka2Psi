@@ -69,14 +69,23 @@
     <Compile Include="AlbumView.xaml.cs">
       <DependentUpon>AlbumView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BubnjarView.xaml.cs">
+      <DependentUpon>BubnjarView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Daje.xaml.cs">
       <DependentUpon>Daje.xaml</DependentUpon>
     </Compile>
     <Compile Include="FestivalView.xaml.cs">
       <DependentUpon>FestivalView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GitaristaView.xaml.cs">
+      <DependentUpon>GitaristaView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="IzdajeView.xaml.cs">
       <DependentUpon>IzdajeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KlavijaturistaView.xaml.cs">
+      <DependentUpon>KlavijaturistaView.xaml</DependentUpon>
     </Compile>
     <Compile Include="KoncertView.xaml.cs">
       <DependentUpon>KoncertView.xaml</DependentUpon>
@@ -123,6 +132,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="BubnjarView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Daje.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -131,7 +144,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="GitaristaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="IzdajeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KlavijaturistaView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

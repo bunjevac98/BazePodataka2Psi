@@ -121,5 +121,29 @@ namespace BendAplikacija
             daje.Show();
 
         }
+
+        private void Button_Click_Bubnjar(object sender, RoutedEventArgs e)
+        {
+            BubnjarView bubnjar = new BubnjarView();
+            bubnjar.Show();
+
+        }
+
+        private void Button_Click_Klavijaturista(object sender, RoutedEventArgs e)
+        {
+            KlavijaturistaView klavija = new KlavijaturistaView();
+            klavija.Show();
+
+        }
+
+        private void Button_Click_Gitarista(object sender, RoutedEventArgs e)
+        {
+            GitaristaView gitarista = new GitaristaView();
+            gitarista.Show();
+        }
+
+
+
+
     }
 }
