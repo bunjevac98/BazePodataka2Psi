@@ -72,7 +72,7 @@ namespace BendAplikacija
                 {
                     con.Open();
                     SqlCommand comm = new SqlCommand("UPDATE dbo.Odrzis SET BendIdBenda=" +
-                    a + ",KoncertIdKon=" + b + " WHERE BendIdBenda =" + pamtiKljucBenda + " and ZanrIdz=" + pamtiKljucKoncerta + "", con);
+                    a + ",KoncertIdKon=" + b + " WHERE BendIdBenda =" + pamtiKljucBenda + " and KoncertIdKon=" + pamtiKljucKoncerta + "", con);
                     DataSet ds = new DataSet();
                     SqlDataAdapter da = new SqlDataAdapter(comm);
                     da.Fill(ds);
@@ -102,7 +102,7 @@ namespace BendAplikacija
             try
             {
                 con.Open();
-                SqlCommand comm = new SqlCommand("DELETE FROM dbo.Odrzis WHERE BendIdBenda=" + pamtiKljucBenda + "", con);
+                SqlCommand comm = new SqlCommand("DELETE FROM dbo.Odrzis WHERE BendIdBenda=" + pamtiKljucBenda + " and KoncertIdKon=" + pamtiKljucKoncerta + "", con);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(comm);
                 da.Fill(ds);

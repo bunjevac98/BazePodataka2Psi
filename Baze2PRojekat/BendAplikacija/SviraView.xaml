@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BendAplikacija"
         mc:Ignorable="d"
-        Title="SviraView" Height="450" Width="800">
+        Title="SviraView" Height="450" Width="800"
+        Loaded="Window_Loaded">
     <Grid>
-        
+        <DataGrid Name="DataGridSvira" ItemsSource="{Binding}" HorizontalAlignment="Left" Height="176" Margin="10,10,0,0" VerticalAlignment="Top" Width="774" SelectionChanged="DataGridSvira_SelectionChanged" />
+        <Label Content="IDBenda" HorizontalAlignment="Left" Margin="41,233,0,0" VerticalAlignment="Top" Width="78" Height="35"/>
+        <Label Content="Jmbg" HorizontalAlignment="Left" Margin="41,273,0,0" VerticalAlignment="Top" Width="78"/>
+        <TextBox Name="TBIDBenda" HorizontalAlignment="Left" Height="23" Margin="231,237,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="TBJmbg" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="231,277,0,0"/>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="683,266,0,0" VerticalAlignment="Top" Width="75" Height="29" Click="Add_Click"/>
+        <Button Content="Update" HorizontalAlignment="Left" Margin="683,322,0,0" VerticalAlignment="Top" Width="75" Height="29" Click="Update_Click"/>
+        <Button Content="Remove" HorizontalAlignment="Left" Margin="683,381,0,0" VerticalAlignment="Top" Width="75" Height="29" Click="Delete_Click"/>
     </Grid>
 </Window>
